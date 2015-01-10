@@ -10,7 +10,10 @@ body{
 }
 
 textarea {
-  padding: 5px;
+  width: 20%;
+  font-size: 20px;
+  padding: 50px;
+  resize: none;
 }
 
 #container {
