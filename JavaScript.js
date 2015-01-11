@@ -10,7 +10,7 @@ var main = function() {
     $('.reserved').text(reserved);
 
     // clear
-    if(principal.length == 0 || reserve_ratio.length == 0) {
+    if(principal.length === 0 || reserve_ratio.length === 0) {
       $('.reserved').text("0");
       $('.max_result').text("0");
     }
@@ -29,18 +29,20 @@ var main = function() {
     var money_lendable = principal - reserved; // 90 = 100 - 10
     max_result = money_lendable; // 90 initialized for max_result
 
-    if(max_result >= 0) {
+    for(var i=0; i <= 10; i++) {
       principal = money_lendable;
       reserved = principal / reserve_ratio;
       money_lendable = principal - reserved;
       max_result += money_lendable;
+      console.log(money_lendable);
+      console.log(max_result);
     }
 
     $('.max_result').text(max_result);
 
 
     // clear
-    if(principal.length == 0 || reserve_ratio.length == 0) {
+    if(principal.length === 0 || reserve_ratio.length === 0) {
       $('.reserved').text("0");
       $('.max_result').text("0");
     }
@@ -58,7 +60,7 @@ var main = function() {
   });
 
   // Alphabet input ignorer
-  $('textarea').keydown(function (e) {
+  $('textarea').keydown(function(e) {
     // Allow: backspace, delete, tab, escape, enter and .
     if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
       // Allow: Ctrl+A
