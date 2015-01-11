@@ -5,12 +5,12 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
     <title>Cash Reserve Ratio</title>
+
+    <link rel="stylesheet" media="screen" href="Style.css">
+    
+    <script language="JavaScript" type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script language="JavaScript" type="text/javascript" src="JavaScript.js"></script>
   </head>
-
-  <script language="JavaScript" type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
-  <script language="JavaScript" type="text/javascript" src="JavaScript.js"></script>
-
-  <link rel="stylesheet" media="screen" href="Style.css">
 
   <body>
     <div id="container">
@@ -24,13 +24,13 @@
       </div>
       <div id="content">
         <h2>Pincipal</h2>
-        <div class="txtarea">
+        <div class="txtarea firstArea whitebg">
           <textarea type="number" class="principal"></textarea>
         </div>
       </div>
       <div id="content">
         <h2>Reserve Ratio (%)</h2>
-        <div class="txtarea">
+        <div class="txtarea secondArea whitebg">
           <textarea type="number" maxlength="5" class="reserve_ratio"></textarea>
         </div>
       </div>
@@ -39,16 +39,28 @@
 
       <div id="content">
         <h2>Reserved Money</h2>
-        <textarea type="number" class="reserved" disabled>0</textarea>
+        <div class="txtarea thirdArea">
+          <textarea type="number" class="reserved" disabled>0</textarea>
+        </div>
       </div>
       <div id="content">
         <h2>Maximum Result (≈)</h2>
-        <textarea type="number" class="max_result" disabled>0</textarea>
+        <div class="txtarea fourthArea">
+          <textarea type="number" class="max_result" disabled>0</textarea>
+        </div>
       </div>
       <div id="content">
         <p>
           So, bank made this much invisible money.
         </p>
+      </div>
+      <div id="content">
+        <h3 style="margin-bottom: 5px;">Experimental</h3>
+        <h4>White Textarea Background</h4>
+        <button class="tg_white_1">First Area</button>
+        <button class="tg_white_2">Second Area</button>
+        <button class="tg_white_3">Third Area</button>
+        <button class="tg_white_4">Fourth Area</button>
       </div>
       <!--
       <div id="content">

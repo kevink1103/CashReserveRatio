@@ -107,6 +107,19 @@ var main = function() {
       e.preventDefault();
     }
   });
+
+  $('.tg_white_1').click(function() {
+    $('.firstArea').toggleClass('whitebg');
+  });
+  $('.tg_white_2').click(function() {
+    $('.secondArea').toggleClass('whitebg');
+  });
+  $('.tg_white_3').click(function() {
+    $('.thirdArea').toggleClass('whitebg');
+  });
+  $('.tg_white_4').click(function() {
+    $('.fourthArea').toggleClass('whitebg');
+  });
 };
 
 $(document).ready(main);
