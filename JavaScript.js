@@ -1,8 +1,3 @@
-var principal = $('.principal').val();
-var reserve_ratio = $('.reserve_ratio').val();
-var reserved = $('.reserved').val();
-var max_result = $('.max_result').val();
-
 var main = function() {
   $('.principal').keyup(function() {
     var principal = $('.principal').val();
@@ -10,8 +5,16 @@ var main = function() {
     var reserved = $('.reserved').val();
     var max_result = $('.max_result').val();
 
-    reserved = principal / reserve_ratio;
-    $('.reserved').text(reserved);
+    if(reserve_ratio.length != 0) {
+      reserved = principal / reserve_ratio;
+    }
+
+    if(reserve_ratio.length == 0) {
+      return;
+    }
+    else {
+      $('.reserved').text(reserved);
+    }
   });
 
   $('.reserve_ratio').keyup(function() {
@@ -20,8 +23,16 @@ var main = function() {
     var reserved = $('.reserved').val();
     var max_result = $('.max_result').val();
 
-    reserved = principal / reserve_ratio;
-    $('.reserved').text(reserved);
+    if(reserve_ratio.length != 0) {
+      reserved = principal / reserve_ratio;
+    }
+
+    if(principal.length == 0) {
+      return;
+    }
+    else {
+      $('.reserved').text(reserved);
+    }
   });
 
   $('.btn').click(function() {
@@ -30,6 +41,7 @@ var main = function() {
     var reserved = $('.reserved').val();
     var max_result = $('.max_result').val();
     alert(principal);
+    alert(reserve_ratio);
     alert(reserved);
     alert(max_result);
   });
