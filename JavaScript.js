@@ -10,30 +10,29 @@ var main = function() {
 
     $('.reserved').text(reserved);
 
+    if(reserve_ratio.length == 0) {
+      return;
+    }
+    else {
+      // max result
+      var money_lendable = principal - reserved; // 90 = 100 - 10
+      max_result = money_lendable; // 90 initialized for max_result
+      //console.log(max_result);
 
-    // if(reserved_ratio.length == 0) {
-    //   return;
-    // }
-    // else {
-    //   // max result
-    //   var money_lendable = principal - reserved; // 90 = 100 - 10
-    //   max_result = money_lendable; // 90 initialized for max_result
-    //   console.log(max_result);
-    //
-    //   var count = 500;
-    //   while(count > 0) {
-    //     principal = money_lendable;
-    //     reserved = principal * reserve_ratio;
-    //     money_lendable = principal - reserved;
-    //     max_result += money_lendable;
-    //     console.log(money_lendable);
-    //     console.log(max_result);
-    //     count--;
-    //   }
-    //   max_result = Math.round(max_result);
-    //   $('.max_result').text(max_result);
-    //   // max result
-    // }
+      var count = 500;
+      while(count > 0) {
+        principal = money_lendable;
+        reserved = principal * reserve_ratio;
+        money_lendable = principal - reserved;
+        max_result += money_lendable;
+        //console.log(money_lendable);
+        //console.log(max_result);
+        count--;
+      }
+      max_result = Math.round(max_result);
+      $('.max_result').text(max_result);
+      // max result
+    }
 
     // clear
     if(principal.length == 0 || reserve_ratio.length == 0) {
