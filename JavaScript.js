@@ -17,30 +17,27 @@ var main = function() {
   });
 
   $('.reserve_ratio').keyup(function() {
-    var principal = $('.principal').val();
-    var reserve_ratio = $('.reserve_ratio').val();
-    var reserved = $('.reserved').val();
-    var max_result = $('.max_result').val();
+    var principal = $('.principal').val(); // 100
+    var reserve_ratio = $('.reserve_ratio').val(); // 10
+    var reserved = $('.reserved').val(); // 0
+    var max_result = $('.max_result').val(); //0
 
-    reserved = principal / reserve_ratio;
+    reserved = principal / reserve_ratio; // 10 = 100 / 10
 
-    $('.reserved').text(reserved);
+    $('.reserved').text(reserved); // 10 written
 
-    var money_lendable = principal - reserved;
-    max_result = money_lendable;
+    var money_lendable = principal - reserved; // 90 = 100 - 10
+    max_result = money_lendable; // 90 initialized for max_result
 
-
-    if(money_lendable >= 0) {
-      if(money_lendable >= 0) {
-        principal = money_lendable;
-        reserved = principal / reserve_ratio;
-        money_lendable = principal - reserved;
-        max_result += money_lendable;
-      }
-
-      
-      $('.max_result').text(max_result);
+    if(max_result >= 0) {
+      principal = money_lendable;
+      reserved = principal / reserve_ratio;
+      money_lendable = principal - reserved;
+      max_result += money_lendable;
     }
+
+    $('.max_result').text(max_result);
+
 
     // clear
     if(principal.length == 0 || reserve_ratio.length == 0) {
