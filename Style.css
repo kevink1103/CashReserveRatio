@@ -12,10 +12,12 @@ body{
 
 textarea {
   width: 40%;
+  height: 50px;
   font-size: 20px;
   padding: 50px;
   resize: none;
   border: none;
+  border-radius: 10px;
 }
 
 #container {
@@ -30,7 +32,7 @@ textarea {
   height: auto;
   background-color: #FF1168;
   padding: 30px 0 30px 0;
-  border-bottom: 3px solid #9E1E4C;
+  border-bottom: 5px solid #9E1E4C;
   display: block;
   overflow: hidden;
   font-size: 1.7em;
@@ -46,7 +48,7 @@ textarea {
 
 .txtarea {
   width: 100%;
-  height: auto;
+  height: 150px;
   background-color: white;
 }
 
@@ -58,8 +60,8 @@ textarea {
   width: 100%;
   height: auto;
   background-color: #25020F;
-  padding: 20px 0 20px 0;
-  border-top: 3px solid #100207;
+  padding: 30px 0 30px 0;
+  border-top: 5px solid #100207;
 }
 
 .shadow {
