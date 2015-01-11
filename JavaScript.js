@@ -5,15 +5,14 @@ var main = function() {
     var reserved = $('.reserved').val();
     var max_result = $('.max_result').val();
 
-    if(reserve_ratio.length != 0) {
-      reserved = principal / reserve_ratio;
-    }
+    reserved = principal / reserve_ratio;
 
-    if(reserve_ratio.length == 0) {
-      return;
-    }
-    else {
-      $('.reserved').text(reserved);
+    $('.reserved').text(reserved);
+
+    // clear
+    if(principal.length == 0 || reserve_ratio.length == 0) {
+      $('.reserved').text("0");
+      $('.max_result').text("0");
     }
   });
 
@@ -23,15 +22,30 @@ var main = function() {
     var reserved = $('.reserved').val();
     var max_result = $('.max_result').val();
 
-    if(reserve_ratio.length != 0) {
-      reserved = principal / reserve_ratio;
+    reserved = principal / reserve_ratio;
+
+    $('.reserved').text(reserved);
+
+    var money_lendable = principal - reserved;
+    max_result = money_lendable;
+
+
+    if(money_lendable >= 0) {
+      if(money_lendable >= 0) {
+        principal = money_lendable;
+        reserved = principal / reserve_ratio;
+        money_lendable = principal - reserved;
+        max_result += money_lendable;
+      }
+
+      
+      $('.max_result').text(max_result);
     }
 
-    if(principal.length == 0) {
-      return;
-    }
-    else {
-      $('.reserved').text(reserved);
+    // clear
+    if(principal.length == 0 || reserve_ratio.length == 0) {
+      $('.reserved').text("0");
+      $('.max_result').text("0");
     }
   });
 
